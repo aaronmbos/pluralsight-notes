@@ -1,0 +1,112 @@
+HTTP Fundamentals
+
+Resources
+http address http://www.food.com/
+uniform resource locator URL
+resources images, pages, files, etc
+URL Scheme http://, ftp://
+Host food.com or IP address
+URL path /recipe/grilled-cauliflower
+    Resources can be dynamic
+    Include keywords and try to exclude file names
+Port number defaults to 80
+Query ?q=someText
+    Generally used to pass name/value pairs separated by &
+Fragment defined by #Fragment
+    Indicates an area on a web page to locate based on html element id
+URL breakdown
+http://host:8080/path?q=query#Fragment
+URL Encoding defines characters that can/can't be used in an URL
+    Safe Characters: ASCII characters
+    Unsafe characters needs to be percent encode ie space => %20
+What does it mean when we enter URL into browser?
+    HTTP content types are included in MIME types ie text/html, application/json
+    Browsers first look for MIME types
+    Missing correct MIME types can cause issues with websites
+Content Negotiation
+    Make sure everyone knows how to handle a situation
+    Client can specify media types that it will accept
+
+HTTP Messages
+telnet is a tool that can make http requests
+    automatically uses port 23, but can set manually if needed ie port 80
+URL Canonicalization can be used for SEO optimization
+HTTP Request Methods
+    GET
+    POST
+    PUT
+    DELETE
+    HEAD
+Safe HTTP Methods vs Unsafe HTTP Methods
+    GET is safe, no side effect
+        Searching should be a safe operation
+    POST is unsafe, makes changes on server
+        Signing up, logging in should be unsafe and use POST
+POST/redirect/GET pattern
+    Redirect user to another page after POST
+Request Messages (sent as ASCII)
+[method] [URL] [version]
+[headers]
+[body]
+Common Request headers
+    Referer: URL of referring page
+    User-Agent: info about browser
+    Accept: preferred media types
+    Accept-Language: preferred language
+    Cookie: cookie info
+    If-Modified-Since: Date of last retrieval
+    Date: creation timestamp for message
+Response Message
+    [version] [status] [reason]
+    [headers]
+    [body]
+Status Code Categories
+    100-199 => Informational
+    200-299 => Successful
+    300-309 => Redirection
+    400-499 => Client Error
+    500-599 => Server Error
+Common Response Codes
+    200 => OK
+    301 => Moved Permanently
+    302 => Moved Temporarily
+    304 => Not Modified
+    400 => Bad Request
+    401 => Unauthorized
+    403 => Forbidden
+    404 => Not found
+    500 => Server Error
+    503 => Service Unavailable
+Fiddler used to intercept and inspect HTTP traffic
+Summary
+    HTTP messages always come in pairs Request => Response
+    Messages are sent in plain text
+
+HTTP Connections: Handshakes and Packets
+Protocol Layers
+    HTTP - Application Layer protocol
+        Open socket and write data
+    TCP - Transport Layer protocol (Reliable with flow control)
+        Provides vital services for delivery
+    IP - Network Layer protocol
+        Move data through routers, switches, etc.
+        Break data into packets/datagrams
+    Ethernet - Data Link Layer
+        0/1s and electrical signals
+Showed C# example of opening socket and sending request
+Use Wireshark to view TCP/IP communication
+    3 Step TCP Handshake - make sure server and client are in agreement
+    Then HTTP message can be sent
+    HTTP relies on TCP heavily
+Browser open parallel connections to server for better performance
+    # of parallel connections can depend
+        Law of diminishing returns
+Persistent connections stay open across requests
+    avoid slow start and improve response times
+    most servers will close connections after a period of idle time
+Pipeline requests
+    Send multiple requests before waiting for a response
+    
+    
+
+
