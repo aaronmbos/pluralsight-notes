@@ -107,6 +107,58 @@ Persistent connections stay open across requests
 Pipeline requests
     Send multiple requests before waiting for a response
     
-    
+HTTP Architecture
+Proxies, Caches, Resources Redux
+Applications are built around resources
+    Need to be identified and located with URLs
+    URLs are not technology restrictive
+    Can have multiple representations
+Roy Thomas Fielding - Dissertation about HTTP and Rest
+Embrace HTTP => URL is pointer/indirection between client and server
+Web Server Processes
+    Logging request/response
+    Compress response
+Proxy Server - server that sits between client and server
+    Inspect messages and take additional actions
+        Remove confidential data/modify headers/re-route traffic
+    Forward Proxy - closer to client
+        Provide benefit to specific ISP, customer, company
+    Reverse Proxy - closer to server
+        Take load of off application servers / load balancing
+        SSL Acceleration
+        Add additional security
+        Caching proxies to improve performance
+    Proxies are not always hardware ie Fiddler
+Caching
+    Optimization to improve performance and scalability
+        Reduce latency bottleneck
+    Public cache shared across multiple users
+    Private cache is dedicated to single user ie browser cache
+    Clients generally want to cache 200 OK GET responses
+    Don't cache PUT, POST, DELETE
+    Expires/Pragma headers are deprecated, but still around
+    Cache Control header
+        Public
+        Private
+        no-cache: don't cache
+        no-store: you never saw this response
+    Response.Cache.SetCacheability()
+    Response.Cache.SetExpires()
+HTTP allows for a loosely coupled and flexible architecture
+
+HTTP Security
+HTTP is a stateless protocol
+    allows for layer processes like caching/proxies/etc
+Applications are often stateful
+    Saving state
+        Hidden input values ie VIEWSTATE in Web Forms / Embedding state in resource
+        User Session State Store - short lived state and can impact scalability
+        Cookies - defined by RFC6265
+            Can identify users, but do not authenticate users
+            Privacy concerns
+            name=value&pairs=cookies; domain=searchengine.com; path=/
+
+
+
 
 
