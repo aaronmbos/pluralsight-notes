@@ -157,7 +157,24 @@ Applications are often stateful
             Can identify users, but do not authenticate users
             Privacy concerns
             name=value&pairs=cookies; domain=searchengine.com; path=/
-
+            HttpOnly specifies that cookies can't be consumed by script or external resource
+Basic Authentication
+    Insecure and rarely used without HTTPS
+Forms Authentication
+    Not standard, but supported by some application frameworks
+    Not secure unless HTTPS, details in plaintext
+    Complete control over login experience
+Open ID
+    Open standard for identity verification with identity providers
+HTTPS
+    Encrypt message before travelling across network
+    default port 443
+    Additional SSL/TLS layer in network stack
+    Server must have cryptographyic cert
+        Used to validate using public key crypto and signing authority
+    Entire request/response is encrypted except for host header
+    HTTPs does NOT authenticate the client
+    HTTPS traffic is not cacheable publicly
 
 
 
