@@ -1,0 +1,26 @@
+C# Design Patterns: Adapter
+- by Steve Smith
+Key Problem
+    Incompatible interfaces ie power outlet adapters
+    Adapters convert incompatible interface into one that client expects
+Related Principles
+    Replace conditional logic w/ polymorphism
+    Loose coupling
+    Testability
+    SOLID Principles
+        SRP, Open/Closed Principle & Interface Segregation Principle
+Two Kinds of Adapters
+    Object Adapters
+        Hold addition of adaptee
+        Compose and inherit from single base
+    Class Adapter
+        Inherit from adaptee
+        Use multiple inheritance
+Related Patterns
+    Decorator, Bridge, Proxy, Repository, Strategy, Facade
+    Patterns are about communicating design intent
+Key Takeaways
+    An adapter converts an incompatible interface into a compatible one
+    In C#, adapter pattern uses composition known as object adapter
+    Adapters are similar to many other design patterns
+    Adapters can work with service providers, but can also wrap result types
