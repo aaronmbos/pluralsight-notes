@@ -29,3 +29,31 @@ Singe Responsibility Principle
         Each class should have a single responsibility or reason to change
         Strive for high cohesion and loose coupling
         Keep classes small, focused, and testable
+Open / Closed Principle
+    Classes/modules/entities should be open for extension, but closed for modification
+        should be possible to change behavior of method w/o editing source code
+    Balance abstraction and concreteness
+        "new" is glue
+    Parameterize behavior
+    Start concrete and see how code changes over time
+        After a few changes think implementing OCP
+    Typical Approaches to OCP
+        Parameters
+        Inheritance
+        Composition/Injection
+        Extension methods
+    Prefer implementing new features in new classes
+        Design class to suit problem
+        Nothing in current system depends on it
+        Can follow SRP
+        Can be unit-tested
+    Packages and Libraries
+        Closed for modification
+            Consumers can't change package code
+            Authors need to avoid breaking existing code
+        Open for extension
+            Extension methods are an option
+    Key Takeaways
+        Solve problem first using simple, concrete code
+        Identify kinds of changes application is likely to need
+        Modify code to be extensible along axes of change identified over time
