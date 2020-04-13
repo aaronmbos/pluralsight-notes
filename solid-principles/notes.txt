@@ -96,3 +96,27 @@ Interface Segregation Principle
     Key Takeaways
         Prefer small cohesive interfaces
         Following ISP helps with SRP and LSP
+Dependency Inversion Principle
+    High level modules should not depend on low-level modules. Both should depend on abstractions
+        Mostly deals with compile time dependencies
+    What are abstractions in c#?
+        Interfaces and abstract base classes
+        Abstractions shouldn't be coupled to detail
+        Abstraction is the what and detail is the how
+            Abstraction doesn't care about detail
+    Explicit Dependencies Principle
+        Classes shouldn't surprise clients with dependencies
+        Require dependencies up front
+    Dependency Injection
+        Don't create your own dependencies
+        Client injects dependencies as ctor args, props, method params
+        Tip: Prefer Ctor Injection
+            Follows explicit dependencies principle
+            Can leverage IOC containers which allows dependencies to be resolved at runtime
+    Use folders to organize files
+        Following SOLID principles can lead to more well-focused files
+    Key Takeaways
+        Most classes should depend on abstractions, not implementation details
+        Abstractions shouldn't leak details
+        Classes should be explicit about their dependencies
+        Clients should inject dependencies when creating other classes
