@@ -77,3 +77,22 @@ Liskov Substitution Principle
         Ensure base type invariants are enforced
         Look for:
             Type checking, null checking, NotImplementedException
+Interface Segregation Principle
+    Clients should not be forced to depend on methods that they do not use
+    Interfaces should be small and focused
+        Interface is whatever can be accessed by client code (calling code)
+        Large interfaces result in more dependencies which means:
+            more coupling
+            brittle code
+            Difficult testing
+    Detecting ISP Violations
+        Large Interfaces
+        Use of NotImplementedException
+    ISP relies heavily on cohesion
+    Follow pain driven development when deciding when to follow and use ISP
+    Fixing ISP Violations
+        Break up large interfaces
+        Use adapter pattern to address large interfaces out of your control
+    Key Takeaways
+        Prefer small cohesive interfaces
+        Following ISP helps with SRP and LSP
