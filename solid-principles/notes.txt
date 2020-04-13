@@ -1,0 +1,122 @@
+SOLID Principles
+- Steve Smith
+
+Single Responsibility Principle
+Open Closed
+Liskov Substitution
+Interface Segregation
+Dependency Inversion
+
+PDD - Pain Driven Development
+    Avoid premature optimization
+    Utilize SOLID principles to alleviate pain spots in code
+
+Singe Responsibility Principle
+    Each software module should have one and only one reason to change
+    Separate what from the how in classes and methods
+    What is a Responsibility?
+        persistence, logging, validation, business logic, etc
+    Responsibilities change at different times for different reasons
+    Closely related to tight coupling
+        Loose coupling offers modular way to choose which details are involved in operation
+    Separation of concerns
+    Class elements that belong together are cohesive
+        Class Cohesion
+    Responsibilities are directly related to testability
+        Difficult to test one responsibility in isolation
+    Key Takeaways
+        Practice PDD
+        Each class should have a single responsibility or reason to change
+        Strive for high cohesion and loose coupling
+        Keep classes small, focused, and testable
+Open / Closed Principle
+    Classes/modules/entities should be open for extension, but closed for modification
+        should be possible to change behavior of method w/o editing source code
+    Balance abstraction and concreteness
+        "new" is glue
+    Parameterize behavior
+    Start concrete and see how code changes over time
+        After a few changes think implementing OCP
+    Typical Approaches to OCP
+        Parameters
+        Inheritance
+        Composition/Injection
+        Extension methods
+    Prefer implementing new features in new classes
+        Design class to suit problem
+        Nothing in current system depends on it
+        Can follow SRP
+        Can be unit-tested
+    Packages and Libraries
+        Closed for modification
+            Consumers can't change package code
+            Authors need to avoid breaking existing code
+        Open for extension
+            Extension methods are an option
+    Key Takeaways
+        Solve problem first using simple, concrete code
+        Identify kinds of changes application is likely to need
+        Modify code to be extensible along axes of change identified over time
+Liskov Substitution Principle
+    Inheritance IS-A
+    Properties HAS-A
+    LSP - Is substitutable for
+        If inheritance relationships have invariants that clash, LSP is violated
+    Detecting LSP
+        Using is or as
+        Null checks (possible solution is null object pattern)
+        NotImplementedException (base class/interface only partially used)
+    LSP is a Subset of Polymorphism
+    Fixing LSP Violations
+        Follow the "Tell, Don't Ask" principle
+        Minimize null checks with:
+            C# features, Guard clauses, Null object pattern
+    Key Takeaways
+        Is A is insufficient
+            Subtypes must be substitutable for their base types
+        Ensure base type invariants are enforced
+        Look for:
+            Type checking, null checking, NotImplementedException
+Interface Segregation Principle
+    Clients should not be forced to depend on methods that they do not use
+    Interfaces should be small and focused
+        Interface is whatever can be accessed by client code (calling code)
+        Large interfaces result in more dependencies which means:
+            more coupling
+            brittle code
+            Difficult testing
+    Detecting ISP Violations
+        Large Interfaces
+        Use of NotImplementedException
+    ISP relies heavily on cohesion
+    Follow pain driven development when deciding when to follow and use ISP
+    Fixing ISP Violations
+        Break up large interfaces
+        Use adapter pattern to address large interfaces out of your control
+    Key Takeaways
+        Prefer small cohesive interfaces
+        Following ISP helps with SRP and LSP
+Dependency Inversion Principle
+    High level modules should not depend on low-level modules. Both should depend on abstractions
+        Mostly deals with compile time dependencies
+    What are abstractions in c#?
+        Interfaces and abstract base classes
+        Abstractions shouldn't be coupled to detail
+        Abstraction is the what and detail is the how
+            Abstraction doesn't care about detail
+    Explicit Dependencies Principle
+        Classes shouldn't surprise clients with dependencies
+        Require dependencies up front
+    Dependency Injection
+        Don't create your own dependencies
+        Client injects dependencies as ctor args, props, method params
+        Tip: Prefer Ctor Injection
+            Follows explicit dependencies principle
+            Can leverage IOC containers which allows dependencies to be resolved at runtime
+    Use folders to organize files
+        Following SOLID principles can lead to more well-focused files
+    Key Takeaways
+        Most classes should depend on abstractions, not implementation details
+        Abstractions shouldn't leak details
+        Classes should be explicit about their dependencies
+        Clients should inject dependencies when creating other classes
