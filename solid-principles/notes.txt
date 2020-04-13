@@ -57,3 +57,23 @@ Open / Closed Principle
         Solve problem first using simple, concrete code
         Identify kinds of changes application is likely to need
         Modify code to be extensible along axes of change identified over time
+Liskov Substitution Principle
+    Inheritance IS-A
+    Properties HAS-A
+    LSP - Is substitutable for
+        If inheritance relationships have invariants that clash, LSP is violated
+    Detecting LSP
+        Using is or as
+        Null checks (possible solution is null object pattern)
+        NotImplementedException (base class/interface only partially used)
+    LSP is a Subset of Polymorphism
+    Fixing LSP Violations
+        Follow the "Tell, Don't Ask" principle
+        Minimize null checks with:
+            C# features, Guard clauses, Null object pattern
+    Key Takeaways
+        Is A is insufficient
+            Subtypes must be substitutable for their base types
+        Ensure base type invariants are enforced
+        Look for:
+            Type checking, null checking, NotImplementedException
