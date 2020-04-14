@@ -1,0 +1,49 @@
+Refactoring for C# Developers
+Introducing Refactoring and Code Smells
+- Steve Smith
+
+What is refactoring?
+    A change made to internal structure of software w/o changing observable behavior
+    Increase internal quality
+Why refactor?
+    How to improve design and quality of our code
+    Future changes will be more expensive
+    Refactoring is very similar to editing
+        First Draft -> First Revision -> Final Version
+When and how to do it?
+    Red -> Green -> Refactor
+    Try to refactor at development time
+    Pain Driven Development -> does current design cause difficulty
+    Part of fixing a bug or part of a code review
+    Don't wait until code gets bad
+When not to refactor?
+    Avoid refactoring when you don't understand how the current app works
+        Difficult to verify refactoring
+    Massive technical debt in place
+    Imminent deadline
+    Follow the boy scout rule: Leave your code better than you found it
+Refactoring process
+    Make sure current working code is committed
+    Verify current working state of application with automated tests
+    Apply a refactoring
+    Confirm original behavior has been confirmed
+Writing Characterization Tests : Test that the system does whatever it is supposed to do
+    Write a test you know will fail
+    Use failing test output to capture current behavior
+    Update test to assert current behavior, then run test again to pass
+    Tip: Helpful to run test with multiple different inputs
+What are code smells?
+    A surface indication that usually corresponds to a deeper problem in that system
+    Shared vocabulary for areas of code that should be cleaned up (helpful for communicating intent)
+    Principle of Least Astonishment: "Do what users expect"
+        Design APIs from perspective of programers who will consume them
+        Be simple, be clear
+    Code Smells by C# Organizational Hierarchy
+        Statement Smells
+        Method Smells
+        Class Smells
+Key Takeaways
+    Refactoring improves design without changing behavior
+    Refactor while adding value
+    Recognize common code smells
+    Organize code smells by impact and code hierarchy
