@@ -70,3 +70,28 @@ Smell: Dead Code
     Get rid of useless code that is never executed. Causes clutter and reduces readability
 Smell: Hidden Temporal Coupling - Certain operations must be called in a certain sequence, but design does not enforce this beahvior
     Can use template method pattern to address
+
+Method Code Smells and Refactorings
+Smell: Long Method
+    Prefer short, focused methods which leads to easier naming and more understandable code
+    How small is "small"? - Method should fit on one screen, ideally fewer than 10 lines
+Smell: Obscured Intent
+    Methods should be short and easier to read/understand
+Smell: Conditional Complexity - Methods should limit the amount of conditional complexity
+    Keep cyclomatic complexity around 10
+    Use VS or other tools to monitor cyclomatic complexity and other complexity measures
+Smell: Inconsistent Abstraction Level - Methods should work at a single level of abstraction
+    Don't mix high level and low level behavior in the same method
+Specific Refactorings
+    Extract method: Apply to break up long method
+    Rename method: Apply when name of method doesn't reveal purpose
+    Inline method: Apply when method indirection is unnecessary/no value added (avoid with multiple return statements or recursion)
+    Introduce explaining variable: Apply to complicated expression that could use an explanatory name
+    Inline Temp: Reverse refactoring of previous explaining variable
+    Replace Temp with Query: Can be useful is temp variable has logic that can be used in multiple places
+    Split Temporary Variable: Use different temp variables if they are used for different responsibilities
+    Parameterize method: Add parameter to method that are used in method body
+    Replace Parameter with Explicit Methods: Useful when methods utilize a flag param
+    Add/Remove Parameter: Do not perform this refactoring if signature is overriden or derived from another class
+    Separate Query from Modifier: Create method that returns value, and update original method to return void. Call new method from original
+        See CQRS
