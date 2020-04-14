@@ -47,3 +47,26 @@ Key Takeaways
     Refactor while adding value
     Recognize common code smells
     Organize code smells by impact and code hierarchy
+
+Statement Smells
+Smell: Primitive Obsession - overuse of primitives instead of better abstractions or data structures resulting in excess code
+    Introduce name variable or use named arguments
+    Replace primitive with Constant
+    Replace with enum
+Smell: Vertical Separation
+    Define, assign, and use variables and functions near where they are used
+Smell: Inconsistency
+    Be consistent in naming, formatting, etc
+Smell: Poor Names
+    Use descriptive, unambiguous names
+    Stay at appropriate level of abstraction
+    Follow standards
+    Use longer names for longer scopes
+    Don't encode or abbreviate
+Smell: Switch Statements & Complext if-else Chains - indicates lack of proper use of object oriented design
+    Its common for switch statements to bread repitition
+Smell: Duplicate Code - Duplication is the root of all software evil. Follow DRY principle
+Smell: Dead Code
+    Get rid of useless code that is never executed. Causes clutter and reduces readability
+Smell: Hidden Temporal Coupling - Certain operations must be called in a certain sequence, but design does not enforce this beahvior
+    Can use template method pattern to address
