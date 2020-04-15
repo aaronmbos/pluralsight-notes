@@ -95,3 +95,23 @@ Specific Refactorings
     Add/Remove Parameter: Do not perform this refactoring if signature is overriden or derived from another class
     Separate Query from Modifier: Create method that returns value, and update original method to return void. Call new method from original
         See CQRS
+
+Class Code Smells and Refactoring
+Smell: Large Class
+    Extract methods from class
+    Extract Class, subclass, or interface
+Smell: Class Doesn't Do Much / Lazy Class
+Smell: Temporary Fields - private field that is used to share state in a class / between methods
+    Extract temporary field into another class or pass a parameter
+Smell: Alternative Classes with Different Interfaces - Common operations should share common semantics
+Smell: Parallel Inheritance Hierarchies - Changes in one hierarchy will require changes in another
+Smell: Data Class - Classes that lack behavior and have only fields and/or properties
+    Smell only worth acting upon when it occurs in business logic (DTOs/View Models are completely normal and acceptable)
+Smell: Feature Envy - Occurs when behavior lives in one object but requires data from another
+    Extract/move behvior so it resides in class with data that is uses
+Smell: Hidden Dependencies - Classes have external dependencies they do not specify through their constructors
+    Should follow Explicit Dependencies Principle
+"Moving methods is the bread and butter of refactoring" - Martin Fowler
+Specific Refactorings
+    Replace Inheritance with Delegation - Composition over inheritance
+    Replace Conditional with Polymorphism
