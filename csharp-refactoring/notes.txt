@@ -1,0 +1,117 @@
+Refactoring for C# Developers
+Introducing Refactoring and Code Smells
+- Steve Smith
+
+What is refactoring?
+    A change made to internal structure of software w/o changing observable behavior
+    Increase internal quality
+Why refactor?
+    How to improve design and quality of our code
+    Future changes will be more expensive
+    Refactoring is very similar to editing
+        First Draft -> First Revision -> Final Version
+When and how to do it?
+    Red -> Green -> Refactor
+    Try to refactor at development time
+    Pain Driven Development -> does current design cause difficulty
+    Part of fixing a bug or part of a code review
+    Don't wait until code gets bad
+When not to refactor?
+    Avoid refactoring when you don't understand how the current app works
+        Difficult to verify refactoring
+    Massive technical debt in place
+    Imminent deadline
+    Follow the boy scout rule: Leave your code better than you found it
+Refactoring process
+    Make sure current working code is committed
+    Verify current working state of application with automated tests
+    Apply a refactoring
+    Confirm original behavior has been confirmed
+Writing Characterization Tests : Test that the system does whatever it is supposed to do
+    Write a test you know will fail
+    Use failing test output to capture current behavior
+    Update test to assert current behavior, then run test again to pass
+    Tip: Helpful to run test with multiple different inputs
+What are code smells?
+    A surface indication that usually corresponds to a deeper problem in that system
+    Shared vocabulary for areas of code that should be cleaned up (helpful for communicating intent)
+    Principle of Least Astonishment: "Do what users expect"
+        Design APIs from perspective of programers who will consume them
+        Be simple, be clear
+    Code Smells by C# Organizational Hierarchy
+        Statement Smells
+        Method Smells
+        Class Smells
+Key Takeaways
+    Refactoring improves design without changing behavior
+    Refactor while adding value
+    Recognize common code smells
+    Organize code smells by impact and code hierarchy
+
+Statement Smells
+Smell: Primitive Obsession - overuse of primitives instead of better abstractions or data structures resulting in excess code
+    Introduce name variable or use named arguments
+    Replace primitive with Constant
+    Replace with enum
+Smell: Vertical Separation
+    Define, assign, and use variables and functions near where they are used
+Smell: Inconsistency
+    Be consistent in naming, formatting, etc
+Smell: Poor Names
+    Use descriptive, unambiguous names
+    Stay at appropriate level of abstraction
+    Follow standards
+    Use longer names for longer scopes
+    Don't encode or abbreviate
+Smell: Switch Statements & Complext if-else Chains - indicates lack of proper use of object oriented design
+    Its common for switch statements to bread repitition
+Smell: Duplicate Code - Duplication is the root of all software evil. Follow DRY principle
+Smell: Dead Code
+    Get rid of useless code that is never executed. Causes clutter and reduces readability
+Smell: Hidden Temporal Coupling - Certain operations must be called in a certain sequence, but design does not enforce this beahvior
+    Can use template method pattern to address
+
+Method Code Smells and Refactorings
+Smell: Long Method
+    Prefer short, focused methods which leads to easier naming and more understandable code
+    How small is "small"? - Method should fit on one screen, ideally fewer than 10 lines
+Smell: Obscured Intent
+    Methods should be short and easier to read/understand
+Smell: Conditional Complexity - Methods should limit the amount of conditional complexity
+    Keep cyclomatic complexity around 10
+    Use VS or other tools to monitor cyclomatic complexity and other complexity measures
+Smell: Inconsistent Abstraction Level - Methods should work at a single level of abstraction
+    Don't mix high level and low level behavior in the same method
+Specific Refactorings
+    Extract method: Apply to break up long method
+    Rename method: Apply when name of method doesn't reveal purpose
+    Inline method: Apply when method indirection is unnecessary/no value added (avoid with multiple return statements or recursion)
+    Introduce explaining variable: Apply to complicated expression that could use an explanatory name
+    Inline Temp: Reverse refactoring of previous explaining variable
+    Replace Temp with Query: Can be useful is temp variable has logic that can be used in multiple places
+    Split Temporary Variable: Use different temp variables if they are used for different responsibilities
+    Parameterize method: Add parameter to method that are used in method body
+    Replace Parameter with Explicit Methods: Useful when methods utilize a flag param
+    Add/Remove Parameter: Do not perform this refactoring if signature is overriden or derived from another class
+    Separate Query from Modifier: Create method that returns value, and update original method to return void. Call new method from original
+        See CQRS
+
+Class Code Smells and Refactoring
+Smell: Large Class
+    Extract methods from class
+    Extract Class, subclass, or interface
+Smell: Class Doesn't Do Much / Lazy Class
+Smell: Temporary Fields - private field that is used to share state in a class / between methods
+    Extract temporary field into another class or pass a parameter
+Smell: Alternative Classes with Different Interfaces - Common operations should share common semantics
+Smell: Parallel Inheritance Hierarchies - Changes in one hierarchy will require changes in another
+Smell: Data Class - Classes that lack behavior and have only fields and/or properties
+    Smell only worth acting upon when it occurs in business logic (DTOs/View Models are completely normal and acceptable)
+Smell: Feature Envy - Occurs when behavior lives in one object but requires data from another
+    Extract/move behvior so it resides in class with data that is uses
+Smell: Hidden Dependencies - Classes have external dependencies they do not specify through their constructors
+    Should follow Explicit Dependencies Principle
+"Moving methods is the bread and butter of refactoring" - Martin Fowler
+Specific Refactorings
+    Replace Inheritance with Delegation - Composition over inheritance
+    Replace Conditional with Polymorphism
