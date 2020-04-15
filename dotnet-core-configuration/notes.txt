@@ -1,0 +1,19 @@
+Using Configuration and Options in .NET Core and ASP.NET Core Apps
+- Steve Gordon
+What is Configuration?
+  provide initial settins for app
+  support changing behevior without recomplition
+  values determined at runtime
+  Microsoft.Extensions.Configuration
+  Defined by key/value pairs (string, bool, int)
+Configuration Hierarchy
+  Section1:KeyA
+  Section1:KeyB
+  Section2:SubSection:KeyA
+Access keys directly using the full hiearchy
+  _configuration.GetValue<T>("Section1:KeyA");
+Can get configuration section with 
+  _configuation.GetSection("Section1:Subsection");
+Accessing configuration at startup
+  Injected in Program.cs and available in startup ctor (public readonly property by default)
+
