@@ -14,3 +14,18 @@ The Role of Events, Delegates, and Event Handlers
     Responsible for receiving and processing data from a delegate
     Normally 2 params: Sender, EventArgs
 
+Creating Delegates, Events & EventArgs
+  Creating Delegates
+    `public delegate void WorkPerformedHandler(int hours, WorkType workType);`
+    Blueprint for data to be passed through pipeline
+    "Delegate responsibility from point A to point B"
+    The delegate signature must be mimicked by a handler
+  Multicast Delegates
+    Can reference more than one delegate function
+  Adding methods to invocation list
+    `+=` to add to existing delegate
+    Last delegate in the invocation will be the one that creates the return data
+  Behind the scense the compiler creates a new class that inherits from MulticastDelegate
+  IL Spy
+    Disassemble code back to IL or C#
+  Defining Events
