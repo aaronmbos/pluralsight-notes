@@ -1,0 +1,16 @@
+C# Events, Delegates, & Lambdas
+- Dan Wahlin
+
+The Role of Events, Delegates, and Event Handlers
+  Events
+    Useful for notifications to subscribers
+    Events pass EventArgs to send data to subscribers
+  Delegates
+    Important for events (pipeline between event and event handler)
+    Specialized class called a Function Pointer
+    Based on a MulticastDelegate base class
+    Delegate are a Pipeline to pass EventArgs to EventHandler
+  Event Handlers
+    Responsible for receiving and processing data from a delegate
+    Normally 2 params: Sender, EventArgs
+
