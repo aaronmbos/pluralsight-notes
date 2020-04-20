@@ -37,3 +37,16 @@ Creating Delegates, Events & EventArgs
     POCO that inherits from System.EventArgs
     Delegate needs to reference the custom EventArgs class
     Can use EventHandler<T> to simplify delegate definition
+
+Handling Events
+  Instantiating Delegates & Handling Events
+    Delegate signature must be matched by handler
+    `+=` operator used to attach event to event handler
+  Delegate Inference
+    Compiler infers the delegate to be used when wiring up to a event handler
+    Just reference name of event handler method that will be inferred based on signature
+    `-=` will remove delegate from invocation list
+  Anonymous Methods
+    Not used often because Lambdas are simpler to read/use
+    Defined using the delegate keyword
+
