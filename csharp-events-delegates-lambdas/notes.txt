@@ -29,3 +29,11 @@ Creating Delegates, Events & EventArgs
   IL Spy
     Disassemble code back to IL or C#
   Defining Events
+    Define delegate and hook up event member to the delegate type
+    Events are raised by calling the event like a method (invoking the delegate behind the scenes)
+      Event can be cast to the underlying delegate
+  Creating custom EventArgs
+    EventArgs used in signature of many delegates and event handlers
+    POCO that inherits from System.EventArgs
+    Delegate needs to reference the custom EventArgs class
+    Can use EventHandler<T> to simplify delegate definition
