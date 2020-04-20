@@ -50,3 +50,7 @@ Handling Events
     Not used often because Lambdas are simpler to read/use
     Defined using the delegate keyword
 
+Lambdas, Action<T> and Func<T,TResult>
+  Lambdas and Delegates
+  Using Action<T>
+  Using Func<T,TResult>
