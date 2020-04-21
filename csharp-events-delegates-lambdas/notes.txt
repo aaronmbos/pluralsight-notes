@@ -1,0 +1,63 @@
+C# Events, Delegates, & Lambdas
+- Dan Wahlin
+
+The Role of Events, Delegates, and Event Handlers
+  Events
+    Useful for notifications to subscribers
+    Events pass EventArgs to send data to subscribers
+  Delegates
+    Important for events (pipeline between event and event handler)
+    Specialized class called a Function Pointer
+    Based on a MulticastDelegate base class
+    Delegate are a Pipeline to pass EventArgs to EventHandler
+  Event Handlers
+    Responsible for receiving and processing data from a delegate
+    Normally 2 params: Sender, EventArgs
+
+Creating Delegates, Events & EventArgs
+  Creating Delegates
+    `public delegate void WorkPerformedHandler(int hours, WorkType workType);`
+    Blueprint for data to be passed through pipeline
+    "Delegate responsibility from point A to point B"
+    The delegate signature must be mimicked by a handler
+  Multicast Delegates
+    Can reference more than one delegate function
+  Adding methods to invocation list
+    `+=` to add to existing delegate
+    Last delegate in the invocation will be the one that creates the return data
+  Behind the scense the compiler creates a new class that inherits from MulticastDelegate
+  IL Spy
+    Disassemble code back to IL or C#
+  Defining Events
+    Define delegate and hook up event member to the delegate type
+    Events are raised by calling the event like a method (invoking the delegate behind the scenes)
+      Event can be cast to the underlying delegate
+  Creating custom EventArgs
+    EventArgs used in signature of many delegates and event handlers
+    POCO that inherits from System.EventArgs
+    Delegate needs to reference the custom EventArgs class
+    Can use EventHandler<T> to simplify delegate definition
+
+Handling Events
+  Instantiating Delegates & Handling Events
+    Delegate signature must be matched by handler
+    `+=` operator used to attach event to event handler
+  Delegate Inference
+    Compiler infers the delegate to be used when wiring up to a event handler
+    Just reference name of event handler method that will be inferred based on signature
+    `-=` will remove delegate from invocation list
+  Anonymous Methods
+    Not used often because Lambdas are simpler to read/use
+    Defined using the delegate keyword
+
+Lambdas, Action<T> and Func<T,TResult>
+  Lambdas and Delegates
+    Lambdas provide concise syntax to define inline methods
+    Inline method parameters - types are inferred by the compiler with event param types
+    `=>` Lambda operator
+    Method body
+    Lambda expressions can be assigned to any delegate
+  Using Action<T>
+    Accepts a multiple params of type T[,T2,T3...] and returns no value
+  Using Func<T,TResult>
+    Supports passing in multiple parameters of type T[,T2,T3...] and returns a value of TResult
