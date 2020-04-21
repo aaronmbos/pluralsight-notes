@@ -1,0 +1,17 @@
+Advanced C# Collections
+- Simon Robinson
+
+Arrays, Lists, and Collections
+  Arrarys are reference types
+    Equality is determined based on reference address
+      This equality principle holds true for other Collections in .NET as most of them are reference types
+      SequenceEqual() can be used to test for element equality (this is not effecient)
+  Structure and Purpose of Arrays
+    Sized is fixed and can only look up by index
+    Arrays under the hood
+      Items in array are stored in same sequential block of memory
+        Efficient to locate item by index
+      Items can't be added because of how they are stored
+    List<T> holds reference to an internal array
+      Adding item will reallocate/copy old array to new location with additional item
+        Add items is slow, but it is possible
