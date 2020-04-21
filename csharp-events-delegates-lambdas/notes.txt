@@ -52,5 +52,12 @@ Handling Events
 
 Lambdas, Action<T> and Func<T,TResult>
   Lambdas and Delegates
+    Lambdas provide concise syntax to define inline methods
+    Inline method parameters - types are inferred by the compiler with event param types
+    `=>` Lambda operator
+    Method body
+    Lambda expressions can be assigned to any delegate
   Using Action<T>
+    Accepts a multiple params of type T[,T2,T3...] and returns no value
   Using Func<T,TResult>
+    Supports passing in multiple parameters of type T[,T2,T3...] and returns a value of TResult
