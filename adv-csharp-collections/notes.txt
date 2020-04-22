@@ -15,3 +15,14 @@ Arrays, Lists, and Collections
     List<T> holds reference to an internal array
       Adding item will reallocate/copy old array to new location with additional item
         Add items is slow, but it is possible
+
+Collection Performance
+  Performance is measured by how well operations scale when collection size grows
+  Removing a list item
+    O(n) operation which implies execution times grow directly with size of collection
+    O(log n) is similar perf
+  Looking up an element
+    O(1) operation time which implies constant time
+    O(n log n) is similar perf
+  O(n^2) very bad and slow
+  Be careful calling O(n) methods repeatedly
