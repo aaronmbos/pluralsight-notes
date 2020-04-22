@@ -26,3 +26,18 @@ Collection Performance
     O(n log n) is similar perf
   O(n^2) very bad and slow
   Be careful calling O(n) methods repeatedly
+
+Inside Dictionaries and Sorted Dictionaries
+  Dictionary.TryGetValue approaches O(1)
+  Dictionaries have no intrinsic order
+  Sorted Dictionary
+    Sorts items as added to the dictionary
+    Items are sorted by key
+  Sorted List
+    Internally uses a list to store data
+    Uses less memory, but scales worse in comparison to sorted dictionary
+  Dictionary Keys
+    Equality must be implemented properly for keys
+      With custom types this means implementing Equals and GetHashCode correctly
+      Dictionaries use Equals() instead of `==` operator
+      GetHashCode() generates a hash code and dictionaries rely on the hash to look up values
