@@ -41,3 +41,17 @@ Inside Dictionaries and Sorted Dictionaries
       With custom types this means implementing Equals and GetHashCode correctly
       Dictionaries use Equals() instead of `==` operator
       GetHashCode() generates a hash code and dictionaries rely on the hash to look up values
+
+High-perf Modifications with Linked Lists
+  Efficient for adding and removing elements
+  Stores items in definite order
+  Optimized for fast changes
+    Especially when adding/removing first/last nodes
+  LinkedList has reference to first node and last node
+  Each node has reference to next and previous nodes
+  Add/Remove requires no shifting of existing elements, just changing next/previous pointers
+  Lookup in LinkedList is not efficient O(n)
+    No direct indexed element access
+    Common to copy Linked List to different collection type more suitable to task ie iterating/reading from collection
+  LinkedListNode<T>
+  LinkedList<T>.AddLast() is O(1)
