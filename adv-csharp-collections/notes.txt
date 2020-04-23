@@ -123,4 +123,13 @@ Read-only and Immutable Collections
     Not wrappers around an existing collection
       Stronger protection against modifications
     Completely thread safe
-  
+
+Collection Interfaces
+  Decouples code
+  Can make code more maintainable
+  More efficient using collection interfaces
+  Almost all collection expose IEnumerable<T>
+    Exposes GetEnumerator()
+      foreach uses this method to enumerate
+  LINQ does just in time enumeration
+    Tries not to enumerate unless it has to
