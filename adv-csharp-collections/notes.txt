@@ -55,3 +55,17 @@ High-perf Modifications with Linked Lists
     Common to copy Linked List to different collection type more suitable to task ie iterating/reading from collection
   LinkedListNode<T>
   LinkedList<T>.AddLast() is O(1)
+
+Stacks
+  Stack<T>
+  Useful for items to be processed ie undo feature, call stack
+  Only retrieve the latest item
+  LIFO
+  Push items onto stack and pop off stack
+  Stack Characteristics
+    Items are stored in particular order
+    Retrieving an item removes it
+    No direct look up
+    The stack decides which item you get
+      For stacks this will be the last item added
+
