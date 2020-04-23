@@ -69,3 +69,14 @@ Stacks
     The stack decides which item you get
       For stacks this will be the last item added
 
+Queues
+  Queue<T>
+  A queue works just like waiting in line FIFO
+  Process items in the order of which they were added
+  No direct look up
+  Enqueue - add item to end of the queue
+  Dequeue - removes item from the front of the list
+    Dequeue<T>.Dequeue() will throw an exception if the queue is empty
+  Retrieving an item removes it from the queue
+    Can use Peek() method to view element, but not remove
+      Peek() is also availabe on Stack<T>
