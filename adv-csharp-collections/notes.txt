@@ -106,4 +106,21 @@ Merging Data with HashSets and SortedSets
     UnionWith() merges 2 sets to include all elements from both sets
       Changes the set that it has been called against and does not create a new set
     IntersectWith() will only include the element that are in both sets
+
+Read-only and Immutable Collections
+  Preventing modifications on collections
+  Simple wrappers around underlying collection
+  Systems.Collections.ObjectModel
+    ReadOnlyDictionary<TKey, TValue> -> Dictionary<TKey, TValue>
+    ReadOnlyCollection<T> -> List<T>
+  Doesn't allow for collections to be modified
+  Clearly expressed the intent of code
+  Read-only collections can be modified if you have a reference to the underlying collection
+    Need to keep the underlying collection private
+  Immutable Collections
+    System.Collection.Immutable
+    Immutable collections are actually immutable, they can't be modified without reflection/unmanaged code
+    Not wrappers around an existing collection
+      Stronger protection against modifications
+    Completely thread safe
   
