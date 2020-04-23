@@ -1,0 +1,135 @@
+Advanced C# Collections
+- Simon Robinson
+
+Arrays, Lists, and Collections
+  Arrarys are reference types
+    Equality is determined based on reference address
+      This equality principle holds true for other Collections in .NET as most of them are reference types
+      SequenceEqual() can be used to test for element equality (this is not effecient)
+  Structure and Purpose of Arrays
+    Sized is fixed and can only look up by index
+    Arrays under the hood
+      Items in array are stored in same sequential block of memory
+        Efficient to locate item by index
+      Items can't be added because of how they are stored
+    List<T> holds reference to an internal array
+      Adding item will reallocate/copy old array to new location with additional item
+        Add items is slow, but it is possible
+
+Collection Performance
+  Performance is measured by how well operations scale when collection size grows
+  Removing a list item
+    O(n) operation which implies execution times grow directly with size of collection
+    O(log n) is similar perf
+  Looking up an element
+    O(1) operation time which implies constant time
+    O(n log n) is similar perf
+  O(n^2) very bad and slow
+  Be careful calling O(n) methods repeatedly
+
+Inside Dictionaries and Sorted Dictionaries
+  Dictionary.TryGetValue approaches O(1)
+  Dictionaries have no intrinsic order
+  Sorted Dictionary
+    Sorts items as added to the dictionary
+    Items are sorted by key
+  Sorted List
+    Internally uses a list to store data
+    Uses less memory, but scales worse in comparison to sorted dictionary
+  Dictionary Keys
+    Equality must be implemented properly for keys
+      With custom types this means implementing Equals and GetHashCode correctly
+      Dictionaries use Equals() instead of `==` operator
+      GetHashCode() generates a hash code and dictionaries rely on the hash to look up values
+
+High-perf Modifications with Linked Lists
+  Efficient for adding and removing elements
+  Stores items in definite order
+  Optimized for fast changes
+    Especially when adding/removing first/last nodes
+  LinkedList has reference to first node and last node
+  Each node has reference to next and previous nodes
+  Add/Remove requires no shifting of existing elements, just changing next/previous pointers
+  Lookup in LinkedList is not efficient O(n)
+    No direct indexed element access
+    Common to copy Linked List to different collection type more suitable to task ie iterating/reading from collection
+  LinkedListNode<T>
+  LinkedList<T>.AddLast() is O(1)
+
+Stacks
+  Stack<T>
+  Useful for items to be processed ie undo feature, call stack
+  Only retrieve the latest item
+  LIFO
+  Push items onto stack and pop off stack
+  Stack Characteristics
+    Items are stored in particular order
+    Retrieving an item removes it
+    No direct look up
+    The stack decides which item you get
+      For stacks this will be the last item added
+
+Queues
+  Queue<T>
+  A queue works just like waiting in line FIFO
+  Process items in the order of which they were added
+  No direct look up
+  Enqueue - add item to end of the queue
+  Dequeue - removes item from the front of the list
+    Dequeue<T>.Dequeue() will throw an exception if the queue is empty
+  Retrieving an item removes it from the queue
+    Can use Peek() method to view element, but not remove
+      Peek() is also availabe on Stack<T>
+
+Concurrency and Concurrent Collections
+  Thread safe collections
+  Systems.Collections.Concurrent
+  Great for multi threaded environments
+    Don't always function the same as single threaded equivalents
+
+Merging Data with HashSets and SortedSets
+  Sets
+    Enforce uniqueness
+    Operations on whole collections
+  HashSet<T>
+    Unordered bag of objects
+    Ignores duplicate values when adding, but DOES NOT throw exception
+    Enforces uniqueness in scalable/efficent way
+    No keys with no item look up
+      Enforces uniqueness on VALUES
+    Requires equality comparison for type T
+  SortedSet<T>
+    Functions similarly to HashSet<T> except sorts items when added
+    Items in SortedSet<T> of type T must implement IComparable
+    Requires order comparison for type T
+  Merging Sets
+    UnionWith() merges 2 sets to include all elements from both sets
+      Changes the set that it has been called against and does not create a new set
+    IntersectWith() will only include the element that are in both sets
+
+Read-only and Immutable Collections
+  Preventing modifications on collections
+  Simple wrappers around underlying collection
+  Systems.Collections.ObjectModel
+    ReadOnlyDictionary<TKey, TValue> -> Dictionary<TKey, TValue>
+    ReadOnlyCollection<T> -> List<T>
+  Doesn't allow for collections to be modified
+  Clearly expressed the intent of code
+  Read-only collections can be modified if you have a reference to the underlying collection
+    Need to keep the underlying collection private
+  Immutable Collections
+    System.Collection.Immutable
+    Immutable collections are actually immutable, they can't be modified without reflection/unmanaged code
+    Not wrappers around an existing collection
+      Stronger protection against modifications
+    Completely thread safe
+
+Collection Interfaces
+  Decouples code
+  Can make code more maintainable
+  More efficient using collection interfaces
+  Almost all collection expose IEnumerable<T>
+    Exposes GetEnumerator()
+      foreach uses this method to enumerate
+  LINQ does just in time enumeration
+    Tries not to enumerate unless it has to
