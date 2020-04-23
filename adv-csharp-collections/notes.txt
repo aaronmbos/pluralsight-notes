@@ -86,3 +86,24 @@ Concurrency and Concurrent Collections
   Systems.Collections.Concurrent
   Great for multi threaded environments
     Don't always function the same as single threaded equivalents
+
+Merging Data with HashSets and SortedSets
+  Sets
+    Enforce uniqueness
+    Operations on whole collections
+  HashSet<T>
+    Unordered bag of objects
+    Ignores duplicate values when adding, but DOES NOT throw exception
+    Enforces uniqueness in scalable/efficent way
+    No keys with no item look up
+      Enforces uniqueness on VALUES
+    Requires equality comparison for type T
+  SortedSet<T>
+    Functions similarly to HashSet<T> except sorts items when added
+    Items in SortedSet<T> of type T must implement IComparable
+    Requires order comparison for type T
+  Merging Sets
+    UnionWith() merges 2 sets to include all elements from both sets
+      Changes the set that it has been called against and does not create a new set
+    IntersectWith() will only include the element that are in both sets
+  
