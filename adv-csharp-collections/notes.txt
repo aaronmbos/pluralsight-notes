@@ -80,3 +80,9 @@ Queues
   Retrieving an item removes it from the queue
     Can use Peek() method to view element, but not remove
       Peek() is also availabe on Stack<T>
+
+Concurrency and Concurrent Collections
+  Thread safe collections
+  Systems.Collections.Concurrent
+  Great for multi threaded environments
+    Don't always function the same as single threaded equivalents
