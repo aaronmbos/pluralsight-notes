@@ -1,0 +1,42 @@
+C# Design Patterns: State
+- Marc Gilbert
+
+State is the condition of something variable
+  ie order processing state
+Design Challenges
+  How can an object change its behavior when its internal state changes?
+  How can state specific behaviors be defined so that states can be added w/o altering behavior of existing states?
+Why use the state design pattern?
+  Minimize conditional complexity
+  More modular
+  Easier to read and maintain
+  Less difficult to debug
+  More extensible
+The State Design Pattern
+  Encapsulates state-specific behaviours within separate state objects
+  A class delegates the execution of its state-specific behaviors to one state object at a time
+Elements of pattern
+  Context
+    Holds current state as concrete state and allows state to be set
+  Abstract State
+    Defines interface for state specific behavior
+  Concrete State
+    Implementation of the abstract state
+State Pattern Approach
+  Gather a list of possible states
+  Define conditions for transitioning between states
+  Determine initial state
+
+Benefits of the State Design Pattern
+  More modular code architecture
+  Code is easier to maintain and read
+  Application is less difficult to debug
+  Promotes extensibility
+
+Disadvantages
+  Takes time to set up
+  More moving parts
+  Potentially less performant (depends heavily on context)
+
+
+
