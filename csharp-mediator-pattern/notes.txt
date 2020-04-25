@@ -1,0 +1,25 @@
+C# Mediator Design Pattern
+- Steve Michelotti
+
+What is the Mediator pattern?
+  Encapsulate communication and interaction between objects
+  Promote loose coupling between objects
+  Mediator avoids objects referring to each other
+  Central mediator object responsible for maintaining references to all objects
+
+Mediator Pattern Characteristics
+  Mediator: Define communication between colleagues
+  Concrete Mediator
+  Colleague : Communicates only with the Mediator
+  Concrete Colleague
+
+__Encapsulate object interaction with loose coupling__
+
+Mediator knows about all colleagues, but colleagues only know about single mediator
+
+MediatR: open source Mediator implementation in .NET
+  Message processing library (in mem messaging system)
+  Commonly used in a vertical slices architecture
+
+A lot of demo work in this module. Get sample code and add to repo.
+
