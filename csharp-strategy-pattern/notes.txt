@@ -1,0 +1,33 @@
+C# Strategy Design Pattern
+- Filip Ekberg
+
+Strategy Pattern Characteristics
+Context
+  Has reference to strategy and invokes it
+IStrategy
+  Defines contract
+Strategy
+  Concrete implementations of IStrategy
+  The value in this pattern comes from having multiple concrete implementations that can be determined at runtime if necessary
+
+Select an implementation at runtime w/o having to extend the class
+Main goal of strategy pattern is to make code more testable and extensible
+  Strategy interfaces allow for easy mocking and testing
+
+Strategy Pattern can be implemented as a property or a parameter on a method
+  Allows for dynamic strategy usage at runtime
+
+Be mindful that the pattern can add complexity
+
+The strategy pattern is also called the policy pattern
+
+An example of the Strategy pattern is the Array.Sort() method overload that requires an IComparer
+
+Whenever you inject an interface to allow change of behavior you are leveraging the strategy pattern
+
+Summary
+  One of the most commonly used pattern
+  Decouple the context and the concrete implementation
+  Allows for a cleaner implementation in the context
+  Easily extend with additional strategies w/o affecting current implementations
+  Makes testing easier as you can write mocked implementations to inject
