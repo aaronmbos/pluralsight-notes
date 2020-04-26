@@ -1,0 +1,22 @@
+C# Command Design Pattern
+- Filip Ekberg
+
+Command Pattern Characteristics
+  Command
+    A command contains all the data to process the request now or at a later time
+  Receiver
+    A repository for example
+  Invoker
+    Potentially a command manager that handles invoking commands
+  Client
+
+The command pattern can easily be leveraged to allow undo or redo functionality
+  ICommand
+    CanExecute() : bool
+      Determine if the command can be executed or not
+    Execute() : void
+    Undo() : void
+
+Introducing the command pattern can add complexity
+New commands can be introduced without updating existing to avoid breaking existing code
+Allows for separation of concern, which improves testability
