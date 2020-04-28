@@ -1,0 +1,19 @@
+C# Null Object Design Pattern
+- David Starr
+
+Reduce the amount of null checks that are required
+
+Sir Tony Hoare
+  Inventor of quicksort
+  Created null reference in 1965 aka "Billion dollar mistake"
+
+Each null check increase cyclomatic complexity
+
+Create a "Null Object" that is used as a default object when value is not provided
+  Recipient can rely on the Null Object type never being null
+
+The null object can be implemented with inheritance (base class) or composition (interface)
+
+Naming convention Null[TypeName]
+
+Essentially provides a default value which reduces complexity and results in cleaner code
