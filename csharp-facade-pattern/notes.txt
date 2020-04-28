@@ -1,0 +1,17 @@
+C# Facade Design Pattern
+- David Starr
+
+Big Ball of Mud Problem
+  Martin Fowler
+  Use facade class to encapsulate functionality in ball of mud class and expose only what is needed
+
+Several service classes with methods to call
+  Consumer must new up services and call methods
+  Can introdue a facade class and interface for the consumer to interact with
+    Avoid reacting with the service classes themselves and only the facade 
+
+"Poor man's inversion of control"
+
+Use a facade to provide a single interface to multiple worker classes
+Can be used to mask giant classes
+The facade can be more testable and easier to work with than direct implementations (multiple workers/big ball of mud classes)
