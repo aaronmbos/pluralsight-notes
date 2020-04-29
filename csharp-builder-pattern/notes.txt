@@ -1,0 +1,33 @@
+C# Builder Design Pattern
+- Harrison Ferrone
+
+Design Pattern Categories
+  1. Creational
+  2. Structural
+  3. Behavioral
+
+Builder Pattern falls into the creational category
+  Separate construction from representation
+  Initialization is abstracted
+
+The Builder design pattern is not a silver bullet
+  Useful when creating complex objects
+  When object creation needs to be separate from its assembly
+  When different representations need to be created with finer control
+
+Need to create a builder interface that is general enough to be applied to concrete builder implementations
+  Provide control over how an object is constructed
+
+Director class can be used to call the builder methods properly
+  Not required to implement the pattern, but can be helpful if applicable
+
+Fluent Builder
+  A common example of a fluent builder is the StringBuilder class
+  Builder interface methods just need to return an instance of the interface so that methods can be chained
+  Common for the fluent builder pattern not to include a director class
+
+Builder Pattern Implications
+  Vary a product's internal representation
+  Isolates code for construction and representation
+  Gives you finer control over the construction process
+  Shares similarities with the Factory pattern
