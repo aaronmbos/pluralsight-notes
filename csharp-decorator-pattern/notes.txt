@@ -1,0 +1,20 @@
+C# Decorator Design Pattern
+- David Berry
+
+Dynamically add behavior to classes without modifying existing code
+  Design series of decorator object that wrap a component
+
+The decorator pattern is useful for cross cutting concerns like logging, caching, validation
+
+Decorator class needs to implement the same interface/base class as it is decoratorating
+  Ctor of the decorator class should also require an instance of the decorated class
+
+Multiple decorators can be used in conjuction with each other
+  This creates an onion-like effect with the multiple decorator ctors
+Each decorator can focus on a single task, promoting separation of concerns
+Decorator classes allow functionality to be added Dynamically
+
+The decorator pattern works well and can be used with Dependency Injection
+
+A great example of the decorator pattern in .NET is the Stream class (and decorated classes)
+  BufferedStream, CryptoStream, GZipStream all accept an instance of a stream class in ctor and implement a Stream themselves
