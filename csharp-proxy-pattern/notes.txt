@@ -1,0 +1,26 @@
+C# Proxy Design Pattern
+- Steve Smith
+
+Problem for pattern to solve
+  Need to control access to a type for performance, security, or other reasons
+
+Proxy acts a go between for the client and service
+  Proxy should directly reflect the functionality of the service
+
+Client should be unaware that it is working with a Proxy
+  Keep the client ignorant of the details
+
+Proxy Variants
+  Virtual Proxy
+    Stand-in for an object that is expensive to create
+    ie lazy loaded entity properties
+  Remote Proxy
+    Act like a local resource while hiding details of remote resource
+  Smart Proxy
+    Add additional logic around resource access
+    Concerned with managing access to a shared resource ie resource counting/locking
+  Protective Proxy
+    Used to control access to resource based on rules
+    Eliminates repetitive checks
+
+Proxy implementations help follow SoC and SRP as proxy pattern is applied to cross cutting concerns
