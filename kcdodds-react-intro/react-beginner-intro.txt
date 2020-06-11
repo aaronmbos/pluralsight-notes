@@ -1,0 +1,21 @@
+A Beginners Guide to React Introduction
+--Kent Dodds
+Can use unpkg to add React and ReactDOM scripts to page
+  React is used to create elements
+  ReactDOM is used to render the React elements
+Babel is used to convert jsx to javascript
+  Worth spending time to learn how jsx is transpiled to valid js
+  Get Babel from unpkg
+React Fragments can be used to render multiple elements
+  Allows elements to be put side by side without needing container element i.e. div
+  <><span></span></>
+Components must be named with starting uppercase (this includes function components)
+PropTypes allows for component prop validation - available as an npm package
+  PropTypes are not applied in production
+JavaScript expressions are allowed in JSX curly braces
+React rerenders only what is needed via a diff
+  Updates DOM surgically to only update what has changed
+Style prop accepts an object with camel cased css props
+Manage state with the useState hook
+React.useEffect to interact with local storage or any other side effect for that matter
+
